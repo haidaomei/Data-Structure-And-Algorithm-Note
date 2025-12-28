@@ -387,5 +387,6 @@ int kmp_search(const string &text, const string &pattern, const vector<int> &nex
     }
     return -1; // 匹配失败
 }
+```
 
 对于最长公共前后缀的"最长"的讨论:这里请求补充
