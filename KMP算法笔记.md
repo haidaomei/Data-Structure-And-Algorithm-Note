@@ -308,7 +308,11 @@ vector<int> calculateNextBruteForce(const string &pattern)
 
 上面是把next[0]=0,直接体现了每个串的最长公共前后缀的长度,把该数组整体右移并覆盖最后一位,第一位赋-1后就得到了next[0]=-1的next数组,以上程序需要$n^3$的时间复杂度
 
+1-based串的next数组统一在0-based串的数组值上+1,同时将该next数组整体移动到初始索引从1开始,0位空置无意义(由next[0]=0或next[0]=-1得到都可以,这得到1-based串的两种next数组标准);1-based串的next数组也区分右移与否,这只能发生在由next[0]=0统一+1得到的新next数组,此时不考虑index=0位,右移从index=1开始,index=1位补0(对应next[0]=-1后统一+1);人邮社数据结构第二版的next数组采用1-based串加右移
+
 next数组还有线性时间复杂度的求解方法,这里请求补充
+
+next数组右移和非右移的差别,这里请求补充
 
 程序:
 
@@ -390,3 +394,4 @@ int kmp_search(const string &text, const string &pattern, const vector<int> &nex
 ```
 
 对于最长公共前后缀的"最长"的讨论:这里请求补充
+
